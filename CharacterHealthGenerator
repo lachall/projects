@@ -1,0 +1,24 @@
+import random
+print()
+
+def rollDice(sides):
+  result = random.randint(1,sides)
+  return result
+
+def roll_6_and_8():
+    roll_6 = rollDice(6)
+    roll_8 = rollDice(8)
+    health = roll_6 * roll_8
+    return health
+
+print("Welcome to the Character Health Generator!")
+newCharacter = "yes"
+while newCharacter != "no":
+  character = input("Choose your character name: ")
+  health = roll_6_and_8()
+  print(character,"'s health is",health,"hp")
+  newCharacter = input("Would you like to choose a new character? ")
+  if newCharacter == "no":
+    exit()
+  else:
+    continue
